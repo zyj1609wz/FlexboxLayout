@@ -3,7 +3,6 @@ package com.zhaoyanjun.flexboxlayout;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -84,8 +83,6 @@ public class TagLayout3 extends ViewGroup {
 
         //view的高度=已经用了高度+最后一行最大高度 + paddingBottom
         int viewHeight = lineUseHeight + lineMaxHeight + paddingBottom;
-
-        Log.d("rrr--", "保存数据 view宽高------------------2:" + viewWidth + " " + viewHeight);
 
         setMeasuredDimension(viewWidth, viewHeight);
     }
