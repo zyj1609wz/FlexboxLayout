@@ -47,6 +47,7 @@ public class TagLayout2 extends ViewGroup {
             int rWidth = lineUseWidth + child.getMeasuredWidth();
 
             if (rWidth > size - getPaddingLeft() - getPaddingRight()) {
+                //换行
                 lineUseWidth = paddingLeft;
                 lineUseHeight += lineMaxHeight;
                 lineMaxHeight = 0;

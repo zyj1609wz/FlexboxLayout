@@ -15,7 +15,7 @@ import java.util.List;
  * @time 2020/10/29 9:06 PM
  * @desc 高级升级版-
  * 1、考虑 TagLayout3 padding 情况
- * 2、考虑子view margin 情况
+ * 2、考虑 child view margin 情况
  */
 public class TagLayout3 extends ViewGroup {
 
@@ -43,23 +43,42 @@ public class TagLayout3 extends ViewGroup {
 
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
+
             View child = getChildAt(i);
+
+            //获取childView margin
+            MarginLayoutParams childParams = (MarginLayoutParams) child.getLayoutParams();
+            int topMargin = childParams.topMargin;
+            int bottomMargin = childParams.bottomMargin;
+            int leftMargin = childParams.leftMargin;
+            int rightMargin = childParams.rightMargin;
+
             measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
 
-            int rWidth = lineUseWidth + child.getMeasuredWidth();
+            //子view需要的宽度
+            int childNeedWidth = lineUseWidth + child.getMeasuredWidth() + leftMargin + rightMargin;
 
-            if (rWidth > size - getPaddingLeft() - getPaddingRight()) {
+            if (childNeedWidth > size - getPaddingLeft() - getPaddingRight()) {
+                //换行
                 lineUseWidth = paddingLeft;
                 lineUseHeight += lineMaxHeight;
                 lineMaxHeight = 0;
-                Log.d("rrr--", "换行------------------2:" + lineUseHeight);
             }
 
-            Rect bound = new Rect(lineUseWidth, lineUseHeight, lineUseWidth + child.getMeasuredWidth(), lineUseHeight + child.getMeasuredHeight());
-            Log.d("rrr--", "保存数据------------------2:" + bound.left + " " + bound.top + " " + bound.right + " " + bound.bottom);
+            //计算 child view的左边位置
+            int childLayoutLeft = lineUseWidth + leftMargin;
+            //计算 child view的右边位置 = 左边位置 + child 的宽度
+            int childLayoutRight = childLayoutLeft + child.getMeasuredWidth();
+
+            //计算 child view的上边位置
+            int childLayoutTop = lineUseHeight + topMargin;
+            //计算 child view的下边位置 = 上边位置 + child 高度
+            int childLayoutBottom = childLayoutTop + child.getMeasuredHeight();
+
+            Rect bound = new Rect(childLayoutLeft, childLayoutTop , childLayoutRight, childLayoutBottom);
             childBoundList.add(bound);
-            lineUseWidth += child.getMeasuredWidth();
-            lineMaxHeight = Math.max(lineMaxHeight, child.getMeasuredHeight());
+            lineUseWidth += child.getMeasuredWidth() + leftMargin + rightMargin;
+            lineMaxHeight = Math.max(lineMaxHeight, child.getMeasuredHeight() + topMargin + bottomMargin);
             viewWidth = Math.max(viewWidth, lineUseWidth);
         }
 

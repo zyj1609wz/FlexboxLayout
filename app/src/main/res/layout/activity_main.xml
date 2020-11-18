@@ -72,6 +72,7 @@
     </com.zhaoyanjun.flexboxlayout.TagLayout>
 
     <com.zhaoyanjun.flexboxlayout.TagLayout2
+        android:id="@+id/taglayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ff5"
@@ -139,5 +140,101 @@
             android:text="江西省鹰潭市9" />
 
     </com.zhaoyanjun.flexboxlayout.TagLayout2>
+
+    <com.zhaoyanjun.flexboxlayout.TagLayout3
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        android:background="#f88"
+        app:layout_constraintTop_toBottomOf="@id/taglayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="安徽省六安市1" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="陕西省延安市2" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tag_tb"
+            android:text="海南省三亚市3" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="云南省玉溪市4" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="陕西省渭南市5" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="广西玉林市6" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="浙江省金华市7" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="广东省云浮市8" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_tb"
+            android:text="江西省鹰潭市9" />
+
+    </com.zhaoyanjun.flexboxlayout.TagLayout3>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
