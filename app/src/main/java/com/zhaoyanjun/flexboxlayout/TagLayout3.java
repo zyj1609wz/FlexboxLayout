@@ -14,7 +14,7 @@ import java.util.List;
  * @time 2020/10/29 9:06 PM
  * @desc 高级升级版-
  * 1、考虑 TagLayout3 padding 情况
- * 2、考虑 child view margin 情况
+ * 2、考虑 child view margin,padding 情况
  */
 public class TagLayout3 extends ViewGroup {
 
@@ -36,6 +36,7 @@ public class TagLayout3 extends ViewGroup {
         int paddingLeft = getPaddingLeft();
         int paddingTop = getPaddingTop();
         int paddingBottom = getPaddingBottom();
+        int paddingRight = getPaddingRight();
 
         lineUseWidth = paddingLeft;
         lineUseHeight = paddingTop;
@@ -84,7 +85,7 @@ public class TagLayout3 extends ViewGroup {
         //view的高度=已经用了高度+最后一行最大高度 + paddingBottom
         int viewHeight = lineUseHeight + lineMaxHeight + paddingBottom;
 
-        setMeasuredDimension(viewWidth, viewHeight);
+        setMeasuredDimension(viewWidth + paddingRight, viewHeight);
     }
 
     @Override
